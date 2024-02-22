@@ -1,0 +1,200 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: 150px;
+    min-height: 120px;
+    @include desk {
+      gap: 70px;
+    }
+    @include middledesk {
+      gap: 40px;
+    }
+    @media (max-width:650px) {
+      gap: 10px;
+    }
+  }
+  &._active {
+    .header__logo-slogan span {
+      color: black;
+    }
+  }
+  &__btn {
+    @include middletablet {
+      display: none;
+    }
+  }
+ &__logo {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+  z-index: 150;
+  &-slogan {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    span {
+      transition: all .3s ease 0s;
+    }
+  }
+  @media (max-width:650px) {
+    gap: 20px;
+  }
+  &-name {
+    font-weight: 700;
+    font-size: 24px
+  }
+  &-service {
+    @media (max-width:650px) {
+      font-size: 14px;
+    }
+  }
+  img {
+   width: 60px;
+  }
+  span {
+   color: white;
+  }
+ }
+
+ &__menu {
+  @include middledesk {
+    order: 1;
+  }
+ }
+ &__information {
+  margin: 0 0 0 auto;
+ }
+}
+
+.menu {
+  &__btn {
+  display: none;
+  @include middletablet {
+    display: block;
+    }
+  }
+ &__icon {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-accent);
+  cursor: pointer;
+  display: none;
+  z-index: 6;
+  @include middledesk {
+    display: flex;
+  }
+ }
+
+ &__body {
+  @include middledesk {
+    position: fixed;
+    // z-index: 101;
+    left: -100%;
+    top: 0;
+    height: 100%;
+    width: 500px;
+    background-color: white;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 160px 45px 45px 45px;
+    transition: left .3s ease 0s;
+    gap: 40px;
+    &._active {
+      left: 0;
+    }
+    @include middletablet {
+      padding: 160px 20px 20px 20px;
+    }
+    @include middlemobile {
+      width: 100%;
+    }
+  }
+
+ }
+
+ &__list {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  @include middledesk {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0px;
+  }
+ }
+
+ &__item {
+  @include middledesk {
+    width: 100%;
+  }
+ }
+
+ &__link {
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  transition: all .3s ease 0s;
+  &:hover {
+    color: var(--color-accent);
+  }
+  @include middledesk {
+    color: black;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    display: block;
+    font-size: 26px;
+    font-weight: 600;
+  }
+ }
+
+ &__information {}
+}
+.menu__icon span,
+.menu__icon::after,
+.menu__icon::before {
+  position: absolute;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 2px;
+  width: 25px;
+  transition: all 0.3s ease 0s;
+}
+.menu__icon::after,
+.menu__icon::before {
+  content: "";
+}
+.menu__icon::before {
+  top: 19px;
+}
+.menu__icon::after {
+  top: 31px;
+}
+.menu__icon {
+  &._active {
+    span {
+      transform: scale(0);
+    }
+    &::after {
+      top: 25px;
+      left: 13px;
+      transform: rotate(45deg);
+    }
+    &::before {
+      top: 25px;
+      left: 13px;
+      transform: rotate(-45deg);
+    }
+  }
+}

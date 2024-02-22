@@ -1,0 +1,85 @@
+.outsourcing {
+ &__container {
+
+ }
+
+ &__box {
+  @include middletablet {
+   flex-direction: column;
+   gap: 30px;
+  }
+ }
+
+ &__content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  @include middletablet{
+   width:83.33%;
+   margin: 0 auto;
+  }
+  @include middlemobile {
+   width: 100%;
+  }
+ }
+
+ &__wrap {
+  background-color: rgba(255, 242, 246, 1);
+  padding: 30px;
+  @media (max-width:650px) {
+   padding: 20px;
+  }
+  span {
+   font-family: "Mulish";
+   font-weight: 700;
+   font-size: 20px;
+   line-height: 120%;
+   margin-bottom: 20px;
+   display: block;
+  }
+ }
+
+ &__list {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+ }
+ &__image {
+  position: relative;
+  height: 0;
+  padding-top: 58%;
+  @include middletablet {
+   margin: 0 auto;
+   width: 40%;
+   padding-top: 50%;
+  }
+  img {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   object-fit: cover;
+   object-position: center;
+  }
+ }
+ &__item {
+  line-height: 120%;
+ }
+
+ &__advantages {
+  span {
+   font-weight: 700;
+   display: block;
+   margin-bottom: 20px;
+   line-height: 120%;
+  }
+ }
+
+ &__text {
+  line-height: 120%;
+  p:not(:last-child) {
+   margin-bottom: 20px;
+  }
+ }
+}
