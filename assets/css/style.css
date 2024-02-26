@@ -848,6 +848,11 @@ body._lock {
   transition: all 0.3s ease 0s;
 }
 
+.btn:hover {
+  border: 2px solid rgb(199, 13, 64);
+  background-color: rgb(199, 13, 64);
+}
+
 .btn-fill {
   background-color: var(--color-white);
   color: var(--color-accent);
@@ -856,6 +861,12 @@ body._lock {
 
 .btn-stroke {
   background-color: transparent;
+  transition: all 0.3s ease 0s;
+}
+
+.btn-stroke:hover {
+  background-color: var(--color-accent);
+  border: 2px solid var(--color-accent);
 }
 
 .section {
@@ -1647,6 +1658,12 @@ body._lock {
   background-color: white;
   color: var(--color-accent);
   border: none;
+  transition: all 0.3s ease 0s;
+}
+
+.help__btn:hover {
+  background-color: rgb(222, 222, 222);
+  border: none;
 }
 
 .tarifs__list {
@@ -1767,12 +1784,6 @@ body._lock {
 
 .tarifs__btn {
   margin: auto auto 0;
-}
-
-@media (max-width: 1200px) {
-  .tarifs__btn {
-    margin: initial;
-  }
 }
 
 @media (max-width: 968px) {

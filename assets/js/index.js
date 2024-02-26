@@ -10857,6 +10857,7 @@ new Swiper(".partners__swiper", {
   slidesPerView: 5,
   spaceBetween: 15,
   loop: true,
+  grabCursor: true,
   breakpoints: {
     1: {
       slidesPerView: 1,
@@ -10889,6 +10890,7 @@ new Swiper(".reviews__swiper", {
   slidesPerView: 3,
   spaceBetween: 30,
   loop: true,
+  grabCursor: true,
   modules: [Pagination],
   breakpoints: {
     1: {
